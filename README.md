@@ -20,12 +20,13 @@ API的ID和Token可以在后台获取：
 
 参数|填写说明
 :-:|:-
-|API_ID | 在个人中心后台的安全设置里面获取ID|
+API_ID | 在个人中心后台的安全设置里面获取ID
 API_Token|在个人中心后台的安全设置里面获取Token
 domain| 你所注册的主域名，例如```baidu.com```，```qq.com```，```china.edu.cn```，```example.com```
 host|主机记录名，例如```www.baidu.com```的主机记录名是```www```，```image.www.weibo.com```的主机记录是```image.www```，```home.example.com```的主机记录名是```home```
 CHECKURL|用于检查自己的外网IP是什么的网址，注释掉该参数会跳过本地DNS检查比对，直接执行（验证域名记录是否存在以及记录是否重复后）更新；建议的备选CHECKURL：```http://ip.03k.org``` ```http://ip.3322.org``` ```http://myip.ipip.net``` ```http://checkip.dns.he.net/``` ```https://api-ipv4.ip.sb/ip```
 OUT|指定使用某个网卡设备进行联网通信（默认被注释掉）。注意，一些系统的负载均衡功能可能会导致该参数无效。推荐使用```ip a```命令或者```ifconfig```命令查看网卡设备名称。
+ttl|TTL，范围1-604800，不同等级域名最小值不同。
 #### **推荐的部署方法**
 把如上所述的参数填好即可。  
 本脚本没有自带循环，因为linux平台几乎都有Crontab（计划任务），利用计划任务可以实现开机启动、循环执行脚本、并设定循环频率而无需常驻后台。  
